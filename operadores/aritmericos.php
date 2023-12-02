@@ -1,5 +1,7 @@
 <?php
 
+echo "<h2>Operadores Aritméticos</h2>";
+
 echo "<h4>Cambio de signo</h4>";
 
 echo -(-5) . "<br>" . "<br>";
