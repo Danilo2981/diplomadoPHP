@@ -188,5 +188,49 @@ echo $numero2 . $numero2 . $numero1 . "<br>";
 echo $numero3 . $numero1 . $numero2 . "<br>";
 echo $numero3 . $numero3 . $numero1 . "<br>";
 
-echo "<h2>Ejercicio 3</h2>";
+echo "<h1>Ejercicios Unidad</h1>";
+
+echo "<p>Dentro de un archivo crea las variables</p>";
+
+echo "<h3>Variable que permita almacenar el nombre de una persona.</h3>";
+
+$name = "Danlilo";
+var_dump($name);
+
+echo "<h3>Una variable x para almacenar un número con dos decimales.</h3>";
+
+$x = 1.25;
+var_dump($x);
+
+echo "<h3>Una constante para alamacenar el valor del dolar en pesos colombianos.</h3>";
+
+// Definir una constante con la tasa de cambio aproximada de USD a COP
+define('DOLAR_A_COP', 4000); // Este valor es solo un ejemplo, debes ajustarlo según la tasa de cambio actual
+
+// Ejemplo de uso
+$cantidadDolares = 50;
+$cantidadPesos = $cantidadDolares * DOLAR_A_COP;
+
+echo "$cantidadDolares dólares son equivalentes a $cantidadPesos pesos colombianos." . "<br>" . "<br>";
+
+// Definir una constante con la tasa de cambio aproximada de USD a COP
+const DOLAR_A_PCO = 4000; // Este valor es solo un ejemplo, debes ajustarlo según la tasa de cambio actual
+
+// Ejemplo de uso
+$cantidadDolares = 50;
+$cantidadPesos = $cantidadDolares * DOLAR_A_PCO;
+
+echo "$cantidadDolares dólares son equivalentes a $cantidadPesos pesos colombianos.";
+
+echo "<h3>Una variable para almacenar los primeros 7 decimales de Pi.</h3>";
+
+$pi = 3.1415926;
+var_dump($pi);
+
+echo "<h3>Una variable para almacenar los primeros 15 decimales de Euler.</h3>";
+
+// Almacenar los primeros 15 decimales de Euler
+$euler = 2.718281828459045;
+var_dump($euler);
+
 
