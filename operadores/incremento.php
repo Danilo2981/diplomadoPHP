@@ -16,7 +16,7 @@ echo "<h3>Pos Incremento</h3>";
 echo "<p>Retorna la variable y luego retorna la variable incrementando a razon de.</p>";
 
 echo "<p>x = 18;
-echo x++    ;</p>";
+echo x++;</p>";
 
 $x = 18;
 echo "Primer valor de X = " . $x++ . "<br>";
