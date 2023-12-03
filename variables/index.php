@@ -190,7 +190,7 @@ echo $numero3 . $numero3 . $numero1 . "<br>";
 
 echo "<h1>Ejercicios Unidad</h1>";
 
-echo "<p>Dentro de un archivo crea las variables</p>";
+echo "<h2>1. Dentro de un archivo crea las variables</h2>";
 
 echo "<h3>Variable que permita almacenar el nombre de una persona.</h3>";
 
@@ -234,3 +234,20 @@ $euler = 2.718281828459045;
 var_dump($euler);
 
 
+echo "<h2>2. Corrije las siguientes variables y declaraciones. Ver ejercicio en folleto</h2>";
+
+const PI = 3.1415926;
+$nombre = "Diego";
+$apellido;
+static $lenguaje = 'PHP';
+$saludo = 'Hola';
+$edad = 18.5 . " años";
+$precioCamisa = 48500;
+define('dosVARIABLES', "Hola, Saludos");
+define('NUMERO', '9');
+$ciudad1 = "Medellin";
+$ApellidoCompleto = "Palacio Valencia";
+const VERSION = "4.2.4";
+$GLOBALS["AÑO"] = 2019;
+$suma = $x + $y;
+$ciudad = &$nombre;
