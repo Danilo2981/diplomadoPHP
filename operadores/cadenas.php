@@ -55,3 +55,58 @@ $resultado = $numero > 50 ? 'El numero es mayor que 50' : 'El numero es menor qu
 echo "El resultado es:";
 echo "<br>";
 echo $resultado;
+
+echo "<h2>Ejercicios con Cadenas</h2>";
+
+//1.
+
+$nombre = "Diego-Palacio.5;28;41;08";
+
+echo $nombre . "<br>";
+
+//Remplazar -
+$nombre_modificado = str_replace(array('-'), ' ', $nombre);
+
+//Remplazar .
+$nombre_modificado = str_replace(array('.'), ' ', $nombre_modificado);
+
+//Remplazar ;
+$nombre_modificado = str_replace(array(';'), '', $nombre_modificado);
+
+echo $nombre_modificado . "<br>" . "<br>";
+
+//2.
+
+$contraseña = "dav0102";
+
+echo "contraseña:  " . $contraseña . "<br>";
+
+$sha1 = sha1($contraseña);
+$md5 = md5($contraseña);
+
+echo "sha1=  " . $sha1 . "<br>";
+echo "md5=  " . $md5 . "<br>" . "<br>";
+
+$messaje = "Buenos dias estimados estudiantes. Hoy vamos a aprender PHP";
+
+echo $messaje . "<br>";
+
+$strlen = strlen($messaje);
+
+echo "El largo del mesaje es $strlen" . "<br>" . "<br>";
+
+// 3. 
+
+$name = "diego alejandro palacio valencia";
+echo $name . "<br>";
+
+$name_mayusc = strtoupper($name);
+echo $name_mayusc . "<br>" . "<br>";
+
+// 3. 
+
+$myname = "DANILO MIGUEL VEGA LOPEZ";
+echo $myname . "<br>";
+
+$name_minusc = strtolower($myname);
+echo $name_minusc . "<br>" . "<br>";
