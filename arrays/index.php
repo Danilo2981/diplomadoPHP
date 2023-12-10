@@ -88,7 +88,104 @@ else {
     echo "Ooops el array esta vacío";
 }
 
-echo "<br>" . "<br>";
+echo "<br>";
 
 
+/** ARRAY ASOCIATIVO */
 
+//Se define con una clave definida por el usuario
+
+$edades = array('Diego' => 33, "Andres" => 25, "Juan" => 16);
+
+$edades['Diego'] = 33;
+$edades['Andres'] = 25;
+$edades['Juan'] = 16;
+
+//Mostrar arrays asociativos
+
+$fechasNacimiento = array('Diego' => '1999-03-12',
+                            'Andres' => '2000-01-05',
+                            'Juan' => '1997-07-05',);
+
+echo $fechasNacimiento['Diego'] . "</br>";
+echo $fechasNacimiento['Andres'] . "</br>";
+echo $fechasNacimiento['Juan'] . "</br>" . "</br>";
+
+$notas = array('Diego' => 4.5, 'Juan' => 5, 'Alex' => 4);
+
+echo $notas['Diego'] . "</br>";
+echo $notas['Juan'] . "</br>";
+echo $notas['Alex'] . "</br>" . "</br>";
+
+// Permiten asociar diferentes tipos
+$notas = array('Diego' => 4.5, 'Juan' => "Colombia", 'Alex' => true);
+
+echo $notas['Diego'] . "</br>";
+echo $notas['Juan'] . "</br>";
+echo $notas['Alex'] . "</br>" . "</br>";
+
+//Los arrays asociativos no pueden ser accedidos por indexes
+
+//Los arrays asociaivos pueden ser de N posiciones
+
+$array = array('Diego' => 0.5, 'A' => 'Colombia', '1' => true,
+                'Jose' => 1.5, 'B' => 'Colombia', '2' => true,
+                'Año' => 4.5, 'C' => 'Colombia', '3' => true,
+                'Felipe' => 2.5, 'D' => 'Colombia', '4' => true,
+                'Array' => 5, 'E' => 'Colombia', '5' => true,);
+
+echo "Tamaño del array: " . count($array) . "</br>" . "</br>";;
+
+// Los arrays asociativos no permiten repetir claves en su declaracion
+
+// La clave es opcional. Si no se especifica PHP usa el incremento de tipo int
+
+// En un ciclo
+
+$persona = array("Nombre" => "Diego", "Ciudad" => "Medellin", "Altura" => "172cm");
+
+foreach ($persona as $key => $value) {
+    echo $key . " - " . $value . '<br>' . '<br>';
+}
+
+/** ARRAYS MULTIDIMENCIONALES */
+
+//Son arrays de arrays, estos pueden contener o no la misma estructura y cantidad de elementos.
+
+$empleados = array
+            (
+                array('Nombre' => "Diego Palacio",
+                        'Edad' => "22",
+                        'Genero' => "Masculino"
+                    ),
+                array('Nombre' => "Diana Edwards",
+                    'Edad' => "33",
+                    'Genero' => "Femenino"
+                ),
+                array('Nombre' => "Alex Stevenson",
+                        'Edad' => "51",
+                        'Genero' => "Masculino",
+                    ),
+            );
+
+$empleados = array
+            (
+                array('Nombre' => "Diego Palacio",
+                        'Edad' => "22",
+                        'Correo' => "diego@gmail.com"
+                    ),
+                array('Nombre' => "Diana Edwards",
+                    'Altura' => "185cm",
+                    'Genero' => "Femenino"
+                ),
+                array('Nombre' => "Alex Stevenson",
+                        'Genero' => "Sin identificar",
+                    ),
+            );
+
+//Se los muestra con el index del array interno y segundo la clave del elemento
+
+echo $empleados[0]['Nombre'] . "<br>";
+echo $empleados[2]['Genero'] . "<br>" . "<br>";
+
+//Los arrays multidimencionales de mas de 3 niveles son muy dificiles de administrar
