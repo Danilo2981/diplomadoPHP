@@ -122,3 +122,37 @@ switch ($operacion) {
         echo "La operacion no es valida";
         break;
 }
+
+//Otro ejemplo de Switchcase anidado
+
+$notaParcial = 4;
+$notaFinal = 4;
+
+switch ($notaFinal) {
+    case 1;
+    case 2;
+    case 3:
+        echo "Perdiste la materia <br>";
+        break;
+    case 4;
+    case 5:
+        echo "Ganaste la materia <br>";
+        switch ($notaParcial) {
+            case 1;
+            case 2;
+            case 3:
+                echo "Pero perdiste el parcial";
+                break;
+            case 4;
+            case 5:
+                echo "Y tambien el parcial";
+                break;
+            default:
+                echo "Error";
+                break;
+        }
+        break;
+    default:
+        echo "Error";
+        break;
+}
