@@ -423,3 +423,19 @@ if ($promedioA > $promedioB) {
 } else {
     echo "El mejor promedio es el Grupo B: " . $promedioB;
 }
+
+echo "<h4>8. Array con las letras de Colombia</h4>";
+
+$palabra = "Colombia";
+$tamano = strlen($palabra); // Obtenemos el tamaño de la palabra
+
+// Inicializamos un array vacío con el tamaño de la palabra
+$array_caracteres = array_fill(0, $tamano, '');
+
+// Dividimos la palabra en caracteres y los almacenamos en el array
+for ($i = 0; $i < $tamano; $i++) {
+    $array_caracteres[$i] = $palabra[$i];
+}
+
+// Imprimimos el array resultante
+print_r($array_caracteres);
