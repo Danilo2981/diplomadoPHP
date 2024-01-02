@@ -1,3 +1,13 @@
+<?php
+    require_once('../../Usuarios/Modelo/Usuarios.php');
+    require_once('../Modelo/Estudiantes.php');
+    
+    $ModeloUsuarios = new Usuarios();
+    $ModeloUsuarios->validateSession();
+
+    $Modelo = new Estudiantes();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +31,19 @@
             <th>Fecha de Registro</th>
             <th>Acciones</th>
         </tr>
+
+        <?php
+        $Estudiantes = $Modelo->get();
+        if ($Estudiantes != null) {
+            foreach ($Estudiantes as $Estudiante) {
+                # code...
+            }
+        } else {
+            # code...
+        }
+        
+        ?>
+
         <tr>
             <td>1</td>
             <td>Danilo</td>
