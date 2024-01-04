@@ -35,30 +35,29 @@
         <?php
         $Estudiantes = $Modelo->get();
         if ($Estudiantes != null) {
-            foreach ($Estudiantes as $Estudiante) {
-                # code...
-            }
-        } else {
-            # code...
-        }
-        
+            foreach ($Estudiantes as $Estudiante){        
         ?>
 
         <tr>
-            <td>1</td>
-            <td>Danilo</td>
-            <td>Vega</td>
-            <td>1002420246</td>
-            <td>danilo.vega.lopez@gmail.com</td>
-            <td>Español</td>
-            <td>Stiven Tangarife</td>
-            <td>98%</td>
-            <td>2019-10-23</td>
+            <td><?php echo $Estudiante['ID_ESTUDIANTE'] ?></td>
+            <td><?php echo $Estudiante['NOMBRE'] ?></td>
+            <td><?php echo $Estudiante['APELLIDO'] ?></td>
+            <td><?php echo $Estudiante['DOCUMENTO'] ?></td>
+            <td><?php echo $Estudiante['CORREO'] ?></td>
+            <td><?php echo $Estudiante['MATERIA'] ?></td>
+            <td><?php echo $Estudiante['DOCENTE'] ?></td>
+            <td><?php echo $Estudiante['PROMEDIO'] ?>%</td>
+            <td><?php echo $Estudiante['FECHA_REGISTRO'] ?></td>
             <td>
                 <a href="edit.php" tarject="_blank">Editar</a>
                 <a href="delete.php" tarject="_blank">Eliminar</a>
             </td>
         </tr>
+
+        <?php       
+            }
+        }
+        ?>
     </table>
 </body>
 </html>

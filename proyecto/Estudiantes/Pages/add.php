@@ -1,3 +1,13 @@
+<?php
+    require_once('../../Usuarios/Modelo/Usuarios.php');
+    require_once('../../Metodos.php');
+    
+    $ModeloUsuarios = new Usuarios();
+    $ModeloUsuarios->validateSession();
+
+    $ModeloMetodos = new Metodos();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +29,32 @@
         Materia <br>
         <select name="Materia" required="" id="">
             <option value="">Seleccione</option>
-            <option value="Ingles">Ingles</option>
-            <option value="Español">Español</option>
-            <option value="Ciencias">Ciencias</option>
+            <?php
+            $Materias = $ModeloMetodos->getMaterias();
+            if ($Materias != null) {
+                foreach ($Materias as $Materia) {
+            ?>
+                <option value="<?php echo $Materia['MATERIA']; ?>"><?php echo $Materia['MATERIA']; ?></option>
+            <?php        
+                }
+            }
+            ?>
         </select> <br> <br>
         Docente <br>
         <select name="Docente" required="" id="">
             <option value="">Seleccione</option>
-            <option value="Estefania Lopez">Estefania Lopez</option>
-            <option value="Juan River">Juan River</option>
-            <option value="Stiven Quintero">Stiven Quintero</option>
+            <?php
+            $Docentes = $ModeloMetodos->getDocentes();
+            if ($Docentes != null) {
+                foreach ($Docentes as $Docente) {
+            ?>
+                <option value="<?php echo $Docente['NOMBRE'] . ' ' . $Docente['APELLIDO']; ?>"><?php echo $Docente['NOMBRE'] . ' ' . $Docente['APELLIDO']; ?></option>
+            <?php        
+                }
+            }
+            ?>
         </select> <br> <br>
-        Docente <br>
+        Promedio <br>
         <input type="number" name="Promedio" required="" autocomplete="off" placeholder="Promedio" id=""> <br> <br>
         <input type="submit" value="Registrar Estudiante">
     </form>
