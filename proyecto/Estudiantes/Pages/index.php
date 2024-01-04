@@ -49,8 +49,8 @@
             <td><?php echo $Estudiante['PROMEDIO'] ?>%</td>
             <td><?php echo $Estudiante['FECHA_REGISTRO'] ?></td>
             <td>
-                <a href="edit.php" tarject="_blank">Editar</a>
-                <a href="delete.php" tarject="_blank">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Estudiante['ID_ESTUDIANTE'] ?>" tarject="_blank">Editar</a>
+                <a href="delete.php?Id=<?php echo $Estudiante['ID_ESTUDIANTE'] ?>" tarject="_blank">Eliminar</a>
             </td>
         </tr>
 
