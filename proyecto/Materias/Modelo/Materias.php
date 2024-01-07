@@ -51,7 +51,7 @@ class Materias extends Conexion{
     }
 
     public function delete($Id){
-        $statement = $this->db->prepare("DELETE FROM materias WHERE ID_USUARIO = :Id");
+        $statement = $this->db->prepare("DELETE FROM materias WHERE ID_MATERIA = :Id");
         $statement->bindParam(':Id', $Id);
         if ($statement->execute()) {
             header('Location: ../Pages/index.php');

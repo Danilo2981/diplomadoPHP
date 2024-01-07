@@ -1,3 +1,13 @@
+<?php 
+    require_once('../../Usuarios/Modelo/Usuarios.php');
+    require_once('../Modelo/Administradores.php');
+
+    $ModeloUsuarios = new Usuarios();
+    $ModeloUsuarios->validateSession();
+
+    $Modelo = new Administradores();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +22,36 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Apellido</th>
+            <th>Apellido</th> 
             <th>Usuario</th>
             <th>Perfil</th>
             <th>Estado</th>
             <th>Acciones</th>
         </tr>
+
+        <?php 
+        $Administradores = $Modelo->get();
+        if ($Administradores != null) {
+            foreach ($Administradores as $Administrador) {
+        ?>
+
         <tr>
-            <td>1</td>
-            <td>Danilo</td>
-            <td>Vega</td>
-            <td>dvega81</td>
-            <td>Administrador</td>
-            <td>Activo</td>
+            <td><?php echo $Administrador['ID_USUARIO'] ?></td>
+            <td><?php echo $Administrador['NOMBRE'] ?></td>
+            <td><?php echo $Administrador['APELLIDO'] ?></td>
+            <td><?php echo $Administrador['USUARIO'] ?></td>
+            <td><?php echo $Administrador['PERFIL'] ?></td>
+            <td><?php echo $Administrador['ESTADO'] ?></td>
             <td>
-                <a href="edit.php" tarject="_blank">Editar</a>
-                <a href="delete.php" tarject="_blank">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>" tarject="_blank">Editar</a>
+                <a href="delete.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>" tarject="_blank">Eliminar</a>
             </td>
         </tr>
+
+        <?php        
+            }
+        }
+        ?>
     </table>
 </body>
 </html>
