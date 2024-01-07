@@ -32,11 +32,11 @@
         ?>
 
         <tr>
+            <td><?php echo $Materia['ID_MATERIA'] ?></td>
             <td><?php echo $Materia['MATERIA'] ?></td>
-            <td>Ingles</td>
             <td>
-                <a href="edit.php" tarject="_blank">Editar</a>
-                <a href="delete.php" tarject="_blank">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Materia['ID_MATERIA'] ?>" tarject="_blank">Editar</a>
+                <a href="delete.php?Id=<?php echo $Materia['ID_MATERIA'] ?>" tarject="_blank">Eliminar</a>
             </td>
         </tr>
 
