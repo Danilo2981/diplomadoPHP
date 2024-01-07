@@ -40,14 +40,14 @@ class Materias extends Conexion{
     }
 
     public function update($Id, $Materia){
-        $statement = $this->db->prepare("UPDATE materias set MATERIA = :Materia, WHERE ID_MATERIA = :Id");
+        $statement = $this->db->prepare("UPDATE materias set MATERIA = :Materia WHERE ID_MATERIA = :Id");
         $statement->bindParam(':Id',$Id);        
         $statement->bindParam(':Materia',$Materia);
         if ($statement->execute()) {
             header('Location: ../Pages/index.php');
         }else {
-            header('Location: ../Pages/edit.php');
-        }        
+            header('Location: ../Pages/add.php');
+        }         
     }
 
     public function delete($Id){
