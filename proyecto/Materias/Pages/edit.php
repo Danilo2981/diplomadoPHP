@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Editar Materia</h1>
-    <form action="../Controladores/add.php" method="POST">
+    <form action="../Controladores/edit.php" method="POST">
         <input type="hidden" name="Id" value="">
         Nombre <br>
         <input type="text" name="Nombre" required="" autocomplete="off" placeholder="Nombre" id=""> <br> <br>

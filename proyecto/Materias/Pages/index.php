@@ -1,3 +1,13 @@
+<?php
+    require_once('../../Usuarios/Modelo/Usuarios.php');
+    require_once('../Modelo/Materias.php');
+    
+    $ModeloUsuarios = new Usuarios();
+    $ModeloUsuarios->validateSession();
+
+    $Modelo = new Materias();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +24,27 @@
             <th>Nombre</th>
             <th>Acciones</th>
         </tr>
+
+        <?php 
+        $Materias = $Modelo->get();
+        if ($Materias != null) {
+            foreach ($Materias as $Materia) {            
+        ?>
+
         <tr>
-            <td>1</td>
+            <td><?php echo $Materia['MATERIA'] ?></td>
             <td>Ingles</td>
             <td>
                 <a href="edit.php" tarject="_blank">Editar</a>
                 <a href="delete.php" tarject="_blank">Eliminar</a>
             </td>
         </tr>
+
+        <?php 
+            }
+        }                
+        ?>
+
     </table>
 </body>
 </html>

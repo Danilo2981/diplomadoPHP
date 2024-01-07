@@ -1,3 +1,13 @@
+<?php 
+    require_once('../../Usuarios/Modelo/Usuarios.php');
+    require_once('../../Metodos.php');
+
+    $ModeloUsuarios = new Usuarios();
+    $ModeloUsuarios->validateSession();
+
+    $ModeloMetodos = new Metodos();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,7 @@
     <h1>Resgistrar Materia</h1>
     <form action="../Controladores/add.php" method="POST">
         Nombre <br>
-        <input type="text" name="Nombre" required="" autocomplete="off" placeholder="Nombre" id=""> <br> <br>
+        <input type="text" name="Materia" required="" autocomplete="off" placeholder="Nombre de la Materia" id=""> <br> <br>
         <input type="submit" value="Registrar Materia">
     </form>
 </body>
