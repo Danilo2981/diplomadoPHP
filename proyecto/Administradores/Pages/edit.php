@@ -29,7 +29,7 @@
         ?>
 
         Nombre <br>
-    <input type="text" name="Nombre" required="" autocomplete="off" placeholder="Nombre" id="" value="<?php echo $Info['NOMBRE']; ?>"> <br> <br>
+        <input type="text" name="Nombre" required="" autocomplete="off" placeholder="Nombre" id="" value="<?php echo $Info['NOMBRE']; ?>"> <br> <br>
         Apellido <br>
         <input type="text" name="Apellido" required="" autocomplete="off" placeholder="Apellido" id="" value="<?php echo $Info['APELLIDO']; ?>"> <br> <br>
         Usuario <br>
