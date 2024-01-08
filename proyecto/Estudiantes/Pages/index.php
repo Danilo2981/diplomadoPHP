@@ -16,7 +16,30 @@
     <title>Sistema de Notas</title>
 </head>
 <body>
-    <h1>Estudiantes</h1>
+    
+    <?php 
+    if ($ModeloUsuarios->getPerfil() == 'Docente') {
+    ?>    
+    <h1>
+        <a href="#">Estudiantes</a> -
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+    </h1>
+    <?php
+    } else {
+    ?>
+    <h1>
+        <a href="../../Administradores/Pages/index.php">Administradores</a> -
+        <a href="../../Docentes/Pages/index.php">Docentes</a> -
+        <a href="../../Materias/Pages/index.php">Materias</a> -
+        <a href="#">Estudiantes</a> -
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+    </h1>
+    <?php
+    }
+    ?>
+
+    <h3>Bienvenido(a): <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
+
     <a href="add.php" tarject="_blank">Registrar Estudiante</a> <br><br>
     <table border="1">
         <tr>
